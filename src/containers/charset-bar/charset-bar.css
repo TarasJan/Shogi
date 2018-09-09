@@ -1,0 +1,7 @@
+.charset-bar {
+    display: inline-flex;
+    width: 60%;
+    justify-content: space-evenly;
+    padding: 10px 0px;
+    background-color: gray;
+}

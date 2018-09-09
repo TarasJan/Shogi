@@ -1,0 +1,18 @@
+.charset-tile {
+    width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.charset-tile:hover {
+    background-color: greenyellow;
+}
+
+.charset-tile__disabled {
+    background-color: rgb(164, 164, 164) !important;
+    color: rgb(82, 82, 82);
+}

@@ -1,0 +1,20 @@
+.answer-option {
+    color: black;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.answer-option:hover {
+    color: white;
+}
+
+.answer-option__tuna {
+    background-color: coral;
+}
+
+.answer-option__green {
+    background-color: green;
+}
