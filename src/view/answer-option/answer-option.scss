@@ -1,0 +1,23 @@
+.answer-option {
+    color: black;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+$colors: (
+    tuna: coral,
+    green: green,
+);
+
+@each $color, $value in $colors {
+    .answer-option__#{$color} {
+        background-color: $value;
+    }
+
+    .answer-option__#{$color}:hover {
+        background-color: lighten($value, 7%);
+    }
+}

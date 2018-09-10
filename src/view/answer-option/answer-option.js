@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ClassNames from 'classnames/bind';
-import './answer-option.css';
+import './answer-option.scss';
 
 
 const propTypes = {

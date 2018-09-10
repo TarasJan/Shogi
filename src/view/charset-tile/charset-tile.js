@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import ClassNames from 'classnames/bind';
-import './charset-tile.css'
+import './charset-tile.scss'
 
 
 class CharsetTile extends React.Component {
