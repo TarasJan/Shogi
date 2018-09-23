@@ -1,11 +1,22 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import Question from '../../view/question/question';
 import AnswerOptionBox from '../../view/answer-option-box/answer-option-box';
 import './question-window.css';
 import Actions from '../../actions/actions';
 
-const mapStateToProps = (state) => {
+interface IQuestionWindowState {
+  answers?: object[],
+  charset?: object[],
+  text?: string,
+  charsetName?: string,
+  question?: string,
+  scoreInfo?: {limit: number, score: number},
+  onOptionClick?: (ev: any) => void,
+  onLoad?: (props: any) => void
+}
+
+const mapStateToProps = (state: IQuestionWindowState) => {
   const {
     question, answers, charset, scoreInfo,
   } = state;
@@ -17,16 +28,16 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mergeProps = (stateProps, dispatchProps, ownProps) => {
+const mergeProps = (stateProps: IQuestionWindowState, dispatchProps: any, ownProps: any) => {
   const { dispatch } = dispatchProps;
   const { scoreInfo } = stateProps;
   return {
     ...stateProps,
     ...ownProps,
-    onLoad: (props) => { dispatch(Actions.sendNewQuestion(props)); },
-    onOptionClick: (props) => {
+    onLoad: (props: IQuestionWindowState) => { dispatch(Actions.sendNewQuestion(props)); },
+    onOptionClick: (props: IQuestionWindowState) => {
       const answerResult = Actions.answerQuestion(props);
-      if (answerResult.correctly) {
+      if (answerResult.correctly && scoreInfo ) {
         if (scoreInfo.limit - 1 <= scoreInfo.score) {
           dispatch(Actions.increaseScore(-scoreInfo.score));
         } else {
@@ -41,13 +52,15 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   };
 };
 
-class QuestionWindow extends React.Component {
-  componentDidMount() {
+class QuestionWindow extends React.Component<IQuestionWindowState> {
+  public componentDidMount() {
     const { onLoad } = this.props;
-    onLoad(this.props);
+    if (onLoad) {
+      onLoad(this.props);
+    }
   }
 
-  render() {
+  public render() {
     const {
       answers, charset, onOptionClick, question, scoreInfo,
     } = this.props;
