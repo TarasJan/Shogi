@@ -47,7 +47,12 @@ class CharsetBar extends React.Component<ICharsetBarProps> {
     const { charset, onTileClick } = this.props;
     return Object.keys(Charsets).map((name) => {
       const onClick = (charset === Charsets[name]) ? undefined : onTileClick;
-      return <CharsetTile onClick={onClick} charsetName={name} key={name} />;
+      return <CharsetTile
+        charsetName={name}
+        key={name}
+        onClick={onClick}
+        symbol={Charsets[name].symbol}
+      />;
     });
   }
 

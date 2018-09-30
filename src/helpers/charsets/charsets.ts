@@ -1,5 +1,6 @@
 const Charsets = {
   hiragana: {
+    symbol: 'あ',
     あ: 'a',
     い: 'i',
     う: 'u',
@@ -48,6 +49,7 @@ const Charsets = {
     ん: 'n',
   },
   katakana: {
+    symbol: 'ア',
     ア: 'a',
     イ: 'i',
     ウ: 'u',

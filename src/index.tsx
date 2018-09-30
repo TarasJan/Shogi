@@ -8,7 +8,7 @@ import InitialStore from './initial-store';
 import StoreReducer from './reducers/store-reducer';
 import registerServiceWorker from './registerServiceWorker';
 
-  const store = createStore(StoreReducer, InitialStore);
+const store = createStore(StoreReducer, InitialStore);
 
 ReactDOM.render(<Provider store = { store }><App /></Provider>, document.getElementById('root') as HTMLElement);
 registerServiceWorker();

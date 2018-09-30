@@ -1,15 +1,25 @@
 import * as React from 'react';
 import classnames from 'classnames';
+import SelectionBox from '../../components/selection-box';
 import './charset-tile.scss';
 
 interface ICharsetTileProps {
   onClick?: (ev: any) => void,
-  charsetName: string 
+  charsetName: string,
+  symbol: string
 }
 
 class CharsetTile extends React.Component<ICharsetTileProps> {
   public render() {
-    return (<div className={this.klassNames()} onClick={this.handleClick}>{this.props.charsetName}</div>);
+    return (
+    <SelectionBox
+      className={this.klassNames()}
+      onClick={this.handleClick}>
+        <div className='charset-tile__text'>
+          <span><strong>{this.props.symbol}</strong></span><br />
+          <span>{this.props.charsetName}</span>
+        </div>
+    </SelectionBox>);
   }
 
   private handleClick = () => {

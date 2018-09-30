@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import SelectionBox from '../../components/selection-box';
 import './answer-option.scss';
 
 interface IAnswerOptionProps {
@@ -17,7 +18,11 @@ class AnswerOption extends React.Component<IAnswerOptionProps> {
     }
   }
   public render() {
-    return <div className={this.classNames()} onClick={this.handleClick}>{this.props.text}</div>;
+    return <SelectionBox
+      className={this.classNames()}
+      onClick={this.handleClick}>
+        {this.props.text}
+    </SelectionBox>;
   }
   private classNames = () => (classNames(['answer-option', `answer-option__${this.props.color}`]));
 }

@@ -8,6 +8,10 @@
     justify-content: center;
 }
 
+.charset-tile__text {
+    display: inline;
+}
+
 .charset-tile:hover {
     background-color: lighten(chartreuse, 7%);
 }

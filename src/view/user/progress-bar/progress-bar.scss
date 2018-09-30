@@ -1,0 +1,17 @@
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  padding: 20px 0px;
+}
+
+.progress-bar__base {
+  fill: darkgray;
+  height: inherit;
+  width: inherit;
+}
+
+.progress-bar__fill {
+  fill: red;
+  stroke: darkgray;
+  stroke-width: 1px; 
+}

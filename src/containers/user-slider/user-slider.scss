@@ -1,0 +1,18 @@
+.user-slider {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+}
+
+.user-slider__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+}
+
+.user-slider__summary {
+    text-align: left;
+    padding: 20px;
+}
